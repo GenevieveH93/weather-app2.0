@@ -1,9 +1,55 @@
+h1 {
+    font-family: "Noto Sans TC", sans-serif;
+    color: #548CA8;
+    font-size: 48px;
+    line-height: 1.5;
+}
+ul {
+    list-style: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+li {
+font-family: "Noto Sans TC", sans-serif;
+font-size: 14px;
+color: #334257;
+}
+small {
+    font-family: "B612 Mono", monospace;
+    font-size: 8px;
+    color: #476072;
+}
 .container {
     max-width: 800px;
 }
 .app-wrapping {
-    border: 1px solid peachpuff;
+    border: 1px solid #EEEEEE;
     border-radius: 5px;
-    margin: 50px auto 10px auto;
+    margin: 30px auto 10px auto;
     padding: 20px;
+}
+.current-temp {
+    line-height: 1;
+}
+.current-temp img {
+    height: 64px;
+    width: 64px;
+    margin-right: 10px;
+    position: relative;
+}
+.current-temp strong {
+     font-size: 64px;
+     font-family: "Noto Sans TC", sans-serif;
+     font-weight: 400;
+     margin: 0;
+     padding: 0;
+     color: #476072;
+}
+.current-temp a {
+    font-size: 14px;
+     font-family: "Noto Sans TC", sans-serif;
+}
+
+#code-link {
+    color: #548CA8;
 }

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/styles.css">
     <title>GHWeather</title>
     <style><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
    </style>
-    <link rel="stylesheet" href="src/styles.css">
+   
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
@@ -24,10 +25,11 @@
                     </ul>
                 <div class="row"> 
                     <div class="col-6">
-                        <img src="" alt="clear">
-                        <span> <h2>18</h2> </span>
-                       <span>21ºC | 8ºC</span> 
-                        </div>
+                        <div class="current-temp">
+                            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="clear"/>
+                            <strong>21</strong> <a href="#">ºC</a> | <a href="#">ºF</a>
+                       </div>
+                       </div>
                         <div class="col-6">
                             <ul>
                                 <li>Humidity: <span></span>% </li>
@@ -37,7 +39,7 @@
                     </div>
 
         </div>
-        <small> <a href="https://github.com/GenevieveH93/weather-app2.0">Open-source code </a> by Genevieve Hines </small>
+        <small> <a href="https://github.com/GenevieveH93/weather-app2.0" id="code-link">Open-source code</a> by Genevieve Hines </small>
         </div>
 <script src="src/index.js"></script>
 </body>
