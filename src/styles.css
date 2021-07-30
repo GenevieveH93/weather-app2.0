@@ -28,14 +28,27 @@ small {
     margin: 30px auto 10px auto;
     padding: 20px;
 }
+.video-container {
+    height: 150px;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.search-bar {
+    margin-bottom: 50px;
+    line-height: 3;
+    font-size: 12px;
+    font-family: "Noto Sans TC", sans-serif;
+}
 .current-temp {
     line-height: 1;
+     margin-bottom: 50px;
 }
 .current-temp img {
     height: 64px;
     width: 64px;
     margin-right: 10px;
-    position: relative;
 }
 .current-temp strong {
      font-size: 64px;
@@ -47,9 +60,32 @@ small {
 }
 .current-temp a {
     font-size: 14px;
-     font-family: "Noto Sans TC", sans-serif;
+    font-family: "Noto Sans TC", sans-serif;
 }
-
+.current-temp-unit {
+    position: relative;
+    top: -34px;
+}
+#celsius-link {
+    color: #476072;
+    text-decoration: none;
+}
+#fahrenheit-link {
+    color: #548CA8;
+}
+#city-input {
+    width: 100%;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    color: #548CA8;
+}
+#submit-button {
+    width: 100%;
+    border: 1px solid #476072;
+    border-radius: 5px;
+    background-color: #548CA8;
+    color: #ffffff;
+}
 #code-link {
     color: #548CA8;
 }
