@@ -46,6 +46,8 @@ function displayWeather(response) {
     let tempCelsius = temperature;
     let tempFahrenheit = Math.round((tempCelsius * 9) / 5 + 32);
     document.querySelector("strong").innerHTML = tempFahrenheit;
+    document.querySelector("#celsius-link").classList.remove("active");
+    document.querySelector("#fahrenheit-link").classList.add("active");
   }
   document
     .querySelector("#fahrenheit-link")
@@ -54,6 +56,8 @@ function displayWeather(response) {
     event.preventDefault();
     let tempCelsius = temperature;
     document.querySelector("strong").innerHTML = tempCelsius;
+    document.querySelector("#fahrenheit-link").classList.remove("active");
+    document.querySelector("#celsius-link").classList.add("active");
   }
   document.querySelector("#celsius-link").addEventListener("click", celsius);
 }
