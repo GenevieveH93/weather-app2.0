@@ -22,7 +22,7 @@
                         <video src="media/Pexels Videos 1542008.mp4" type="video/mp4" muted autoplay loop alt="weather-video" ></video>
                         </div>
                  </div>
-                <div class="form" id="city-input">
+                <form id="city-input">
                     <div class="row search-bar">
                     <div class="col-10">
                         <input type="text" placeholder="  Type a city..." id="placeholder-text" autocomplete="off">
@@ -32,7 +32,7 @@
                     </div>
                     <p id="current-geo-location">Search current location</p>
                     </div>
-                </div>
+                </form>
             <h1 id="current-location"></h1>
                 <ul>
                     <li> Last updated: <span id="current-time"></span></li>
@@ -40,10 +40,10 @@
                     </ul>
                 <div class="row"> 
                     <div class="col-6">
-                        <div class="current-temp">
-                            <img src="" alt="icon"/>
-                            <strong id="current-temp"></strong> <span class="current-temp-unit"><a href="" id="celsius-link">ºC</a> | <a href="#" id="fahrenheit-link">ºF</a></span>
-                       </div>
+                        <div class="current-temp clearfix">
+                            <img src="" alt="icon" id="current-icon" class="float-left"/>
+                            <strong id="current-temp"></strong> <span class="current-temp-unit"><a href="#" id="celsius-link" class="units">ºC</a> | <a href="#" id="fahrenheit-link" class="units">ºF</a></span>
+                        </div>
                        </div>
                         <div class="col-6">
                             <ul>

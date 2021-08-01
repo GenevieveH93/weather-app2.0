@@ -19,6 +19,12 @@ small {
   font-size: 8px;
   color: #476072;
 }
+a {
+  color: #548ca8;
+}
+a:hover {
+  color: #548ca8;
+}
 .container {
   max-width: 800px;
 }
@@ -65,13 +71,20 @@ small {
 .current-temp-unit {
   position: relative;
   top: -34px;
-}
-#celsius-link {
-  color: #476072;
+  color: #548ca8;
   text-decoration: none;
 }
-#fahrenheit-link {
-  color: #548ca8;
+.current-temp-unit .units {
+  text-decoration: none;
+}
+
+current-temp-unit .units :hover {
+  text-decoration: underline;
+}
+.current-temp-unit .active {
+  color: #476072;
+  text-decoration: none;
+  cursor: default;
 }
 #placeholder-text {
   width: 100%;
@@ -97,6 +110,7 @@ small {
   text-decoration: underline;
   cursor: pointer;
 }
-#code-link {
-  color: #548ca8;
+#current-icon {
+  position: relative;
+  top: -15px;
 }

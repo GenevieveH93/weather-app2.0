@@ -1,5 +1,5 @@
-function currentTime() {
-  let now = new Date();
+function formatTime(timestamp) {
+  let now = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -12,18 +12,17 @@ function currentTime() {
   ];
   let day = days[now.getDay()];
   let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   let minutes = now.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
-  let todayTime = document.querySelector("#current-time");
-  todayTime.innerHTML = `${day} ${hour}:${minutes}`;
+  return `${day} ${hour}:${minutes}`;
 }
-currentTime();
 
 function displayWeather(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   document.querySelector("strong").innerHTML = temperature;
   document.querySelector("h1").innerHTML = response.data.name;
@@ -33,7 +32,17 @@ function displayWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#current-time").innerHTML = formatTime(
+    response.data.dt * 1000
+  );
+  document
+    .querySelector("#current-icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   function fahrenheit(event) {
+    event.preventDefault();
     let tempCelsius = temperature;
     let tempFahrenheit = Math.round((tempCelsius * 9) / 5 + 32);
     document.querySelector("strong").innerHTML = tempFahrenheit;
