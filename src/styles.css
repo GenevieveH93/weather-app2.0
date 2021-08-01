@@ -1,91 +1,102 @@
 h1 {
-    font-family: "Noto Sans TC", sans-serif;
-    color: #548CA8;
-    font-size: 48px;
-    line-height: 1.5;
+  font-family: "Noto Sans TC", sans-serif;
+  color: #548ca8;
+  font-size: 48px;
+  line-height: 1.5;
 }
 ul {
-    list-style: none;
-    margin: 0 0 10px 0;
-    padding: 0;
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
 }
 li {
-font-family: "Noto Sans TC", sans-serif;
-font-size: 14px;
-color: #334257;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+  color: #334257;
 }
 small {
-    font-family: "B612 Mono", monospace;
-    font-size: 8px;
-    color: #476072;
+  font-family: "B612 Mono", monospace;
+  font-size: 8px;
+  color: #476072;
 }
 .container {
-    max-width: 800px;
+  max-width: 800px;
 }
 .app-wrapping {
-    border: 1px solid #EEEEEE;
-    border-radius: 5px;
-    margin: 30px auto 10px auto;
-    padding: 20px;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  margin: 30px auto 10px auto;
+  padding: 20px;
 }
 .video-container {
-    height: 150px;
-    display: block;
-    width: 758px;
-    overflow: hidden;
-    margin-bottom: 20px;
+  height: 150px;
+  display: block;
+  width: 758px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 .search-bar {
-    margin-bottom: 50px;
-    line-height: 3;
-    font-size: 12px;
-    font-family: "Noto Sans TC", sans-serif;
+  margin-bottom: 40px;
+  line-height: 3;
+  font-size: 12px;
+  font-family: "Noto Sans TC", sans-serif;
 }
 .current-temp {
-    line-height: 1;
-     margin-bottom: 50px;
+  line-height: 1;
+  margin-bottom: 50px;
 }
 .current-temp img {
-    height: 64px;
-    width: 64px;
-    margin-right: 10px;
+  height: 64px;
+  width: 64px;
+  margin-right: 10px;
 }
 .current-temp strong {
-     font-size: 64px;
-     font-family: "Noto Sans TC", sans-serif;
-     font-weight: 400;
-     margin: 0;
-     padding: 0;
-     color: #476072;
+  font-size: 64px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #476072;
 }
 .current-temp a {
-    font-size: 14px;
-    font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+  font-family: "Noto Sans TC", sans-serif;
 }
 .current-temp-unit {
-    position: relative;
-    top: -34px;
+  position: relative;
+  top: -34px;
 }
 #celsius-link {
-    color: #476072;
-    text-decoration: none;
+  color: #476072;
+  text-decoration: none;
 }
 #fahrenheit-link {
-    color: #548CA8;
+  color: #548ca8;
 }
-#city-input {
-    width: 100%;
-    border: 1px solid #eeeeee;
-    border-radius: 5px;
-    color: #548CA8;
+#placeholder-text {
+  width: 100%;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  color: #548ca8;
 }
 #submit-button {
-    width: 100%;
-    border: 1px solid #476072;
-    border-radius: 5px;
-    background-color: #548CA8;
-    color: #ffffff;
+  width: 100%;
+  border: 1px solid #476072;
+  border-radius: 5px;
+  background-color: #548ca8;
+  color: #ffffff;
+}
+#current-geo-location {
+  color: #548ca8;
+  font-size: 10px;
+  font-family: "Noto Sans TC", sans-serif;
+  position: relative;
+  left: 5px;
+}
+#current-geo-location:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 #code-link {
-    color: #548CA8;
+  color: #548ca8;
 }

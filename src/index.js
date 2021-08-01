@@ -8,13 +8,10 @@ function currentTime() {
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday"
+    "Sunday",
   ];
   let day = days[now.getDay()];
   let hour = now.getHours();
-  if (hour < 10) {
-      hour = `0${hour}`;
-  }
   let minutes = now.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -26,20 +23,28 @@ function currentTime() {
 currentTime();
 
 function displayWeather(response) {
+  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
-  document.querySelector("#current-temp").innerHTML = temperature;
+  document.querySelector("strong").innerHTML = temperature;
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
   function fahrenheit(event) {
     let tempCelsius = temperature;
     let tempFahrenheit = Math.round((tempCelsius * 9) / 5 + 32);
-    document.querySelector("#current-temp").innerHTML = tempFahrenheit;
+    document.querySelector("strong").innerHTML = tempFahrenheit;
   }
-  document.querySelector("#fahrenheit-link").addEventListener("click", fahrenheit);
+  document
+    .querySelector("#fahrenheit-link")
+    .addEventListener("click", fahrenheit);
   function celsius(event) {
+    event.preventDefault();
     let tempCelsius = temperature;
-    document.querySelector("#current-temp").innerHTML = tempCelsius;
+    document.querySelector("strong").innerHTML = tempCelsius;
   }
   document.querySelector("#celsius-link").addEventListener("click", celsius);
 }
@@ -52,7 +57,7 @@ function searchCity(city) {
 
 function weatherSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
+  let city = document.querySelector("#placeholder-text").value;
   searchCity(city);
 }
 
@@ -68,10 +73,10 @@ function clickGeoUrl(event) {
   navigator.geolocation.getCurrentPosition(apiGeoUrl);
 }
 
-let citySubmit = document.querySelector("#search-bar");
+let citySubmit = document.querySelector("#city-input");
 citySubmit.addEventListener("submit", weatherSubmit);
 
-let currentLocationClick = document.querySelector("#current-location");
+let currentLocationClick = document.querySelector("#current-geo-location");
 currentLocationClick.addEventListener("click", clickGeoUrl);
 
 searchCity("Sydney");
