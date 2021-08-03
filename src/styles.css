@@ -88,6 +88,26 @@ current-temp-unit .units :hover {
   text-decoration: none;
   cursor: default;
 }
+.weather-forecast {
+  text-align: center;
+}
+.forecast-day {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+  color: #334257;
+  line-height: 2;
+}
+.forecast-temp {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+  line-height: 2;
+}
+.forecast-temp-max {
+  color: #476072;
+}
+.forecast-temp-min {
+  color: #548ca8;
+}
 #placeholder-text {
   width: 100%;
   border: 1px solid #eeeeee;

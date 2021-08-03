@@ -21,6 +21,23 @@ function formatTime(timestamp) {
   }
   return `${day} ${hour}:${minutes}`;
 }
+function displayForecast() {
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `
+      <div class="col-2">
+        <div class="forecast-day">Tue</div>
+        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="" width="42"/>
+        <div class="forecast-temp">
+          <span class="forecast-temp-max">18º</span>
+          <span class="forecast-temp-min">10º</span>
+        </div>
+      </div>
+    `;
+  forecastHTML = forecastHTML + `</div>`;
+  document.querySelector("#forecast").innerHTML = forecastHTML;
+}
 
 function displayWeather(response) {
   console.log(response.data);
@@ -94,3 +111,5 @@ let currentLocationClick = document.querySelector("#current-geo-location");
 currentLocationClick.addEventListener("click", clickGeoUrl);
 
 searchCity("Sydney");
+
+displayForecast();
