@@ -31,7 +31,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row forecastContainer">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
@@ -43,10 +43,10 @@ function displayForecast(response) {
           forecastDay.weather[0].icon
         }@2x.png" alt="icon" width="42"/>
         <div class="forecast-temp">
-          <span class="forecast-temp-max">${Math.round(
+          <span class="forecast-temp-max" id="max">${Math.round(
             forecastDay.temp.max
           )}º</span>
-          <span class="forecast-temp-min">${Math.round(
+          <span class="forecast-temp-min" id="min">${Math.round(
             forecastDay.temp.min
           )}º</span>
         </div>
@@ -83,26 +83,6 @@ function displayWeather(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-  function fahrenheit(event) {
-    event.preventDefault();
-    let tempCelsius = temperature;
-    let tempFahrenheit = Math.round((tempCelsius * 9) / 5 + 32);
-    document.querySelector("strong").innerHTML = tempFahrenheit;
-    document.querySelector("#celsius-link").classList.remove("active");
-    document.querySelector("#fahrenheit-link").classList.add("active");
-  }
-  document
-    .querySelector("#fahrenheit-link")
-    .addEventListener("click", fahrenheit);
-  function celsius(event) {
-    event.preventDefault();
-    let tempCelsius = temperature;
-    document.querySelector("strong").innerHTML = tempCelsius;
-    document.querySelector("#fahrenheit-link").classList.remove("active");
-    document.querySelector("#celsius-link").classList.add("active");
-  }
-  document.querySelector("#celsius-link").addEventListener("click", celsius);
-
   getForecast(response.data.coord);
 }
 

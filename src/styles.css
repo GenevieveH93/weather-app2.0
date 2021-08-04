@@ -27,6 +27,11 @@ a {
 a:hover {
   color: #548ca8;
 }
+hr {
+  margin-bottom: 25px;
+  color: #548ca8;
+  opacity: 0.1;
+}
 .container {
   max-width: 800px;
 }
@@ -44,14 +49,14 @@ a:hover {
   margin-bottom: 20px;
 }
 .search-bar {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   line-height: 3;
   font-size: 12px;
   font-family: "Noto Sans TC", sans-serif;
 }
 .current-temp {
   line-height: 1;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 .current-temp img {
   height: 64px;
@@ -73,20 +78,9 @@ a:hover {
 .current-temp-unit {
   position: relative;
   top: -34px;
-  color: #548ca8;
-  text-decoration: none;
-}
-.current-temp-unit .units {
-  text-decoration: none;
-}
-
-current-temp-unit .units :hover {
-  text-decoration: underline;
-}
-.current-temp-unit .active {
+  left: -5px;
   color: #476072;
   text-decoration: none;
-  cursor: default;
 }
 .weather-forecast {
   text-align: center;
@@ -94,7 +88,7 @@ current-temp-unit .units :hover {
 .forecast-day {
   font-family: "Noto Sans TC", sans-serif;
   font-size: 14px;
-  color: #334257;
+  color: #548ca8;
   line-height: 2;
 }
 .forecast-temp {
