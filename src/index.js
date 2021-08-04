@@ -23,24 +23,26 @@ function formatTime(timestamp) {
 }
 function displayForecast() {
   let forecastHTML = `<div class="row">`;
-  forecastHTML =
-    forecastHTML +
-    `
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
       <div class="col-2">
-        <div class="forecast-day">Tue</div>
-        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="" width="42"/>
+        <div class="forecast-day">${day}</div>
+        <img src="" alt="icon" width="120px"/>
         <div class="forecast-temp">
           <span class="forecast-temp-max">18º</span>
           <span class="forecast-temp-min">10º</span>
         </div>
       </div>
     `;
+  });
   forecastHTML = forecastHTML + `</div>`;
   document.querySelector("#forecast").innerHTML = forecastHTML;
 }
 
 function displayWeather(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   document.querySelector("strong").innerHTML = temperature;
   document.querySelector("h1").innerHTML = response.data.name;
