@@ -21,7 +21,9 @@ function formatTime(timestamp) {
   }
   return `${day} ${hour}:${minutes}`;
 }
-function displayForecast() {
+
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastHTML = `<div class="row">`;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
   days.forEach(function (day) {
@@ -29,7 +31,7 @@ function displayForecast() {
       forecastHTML +
       `
       <div class="col-2">
-        <div class="forecast-day">${day}</div>
+        <div class="forecast-day">${day}</div> 
         <img src="" alt="icon" width="120px"/>
         <div class="forecast-temp">
           <span class="forecast-temp-max">18º</span>
@@ -40,6 +42,13 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   document.querySelector("#forecast").innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "9f8717af0ae325e970e3979adb350412";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayWeather(response) {
@@ -80,6 +89,8 @@ function displayWeather(response) {
     document.querySelector("#celsius-link").classList.add("active");
   }
   document.querySelector("#celsius-link").addEventListener("click", celsius);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -97,10 +108,9 @@ function weatherSubmit(event) {
 function clickGeoUrl(event) {
   function apiGeoUrl(position) {
     let apiKey = "9f8717af0ae325e970e3979adb350412";
-    let unit = "metric";
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
-    let apiGeoUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+    let apiGeoUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     axios.get(apiGeoUrl).then(displayWeather);
   }
   navigator.geolocation.getCurrentPosition(apiGeoUrl);
@@ -113,5 +123,3 @@ let currentLocationClick = document.querySelector("#current-geo-location");
 currentLocationClick.addEventListener("click", clickGeoUrl);
 
 searchCity("Sydney");
-
-displayForecast();
