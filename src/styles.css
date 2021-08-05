@@ -38,7 +38,7 @@ hr {
 .app-wrapping {
   border: 1px solid #eeeeee;
   border-radius: 5px;
-  background-color: rgb(226, 224, 224, 0.4);
+  background-color: rgba(226, 224, 224, 0.11);
   margin: 30px auto 10px auto;
   padding: 20px;
 }
