@@ -32,9 +32,7 @@ hr {
   color: #548ca8;
   opacity: 0.4;
 }
-.container {
-  max-width: 800px;
-}
+
 .app-wrapping {
   border: 1px solid #eeeeee;
   border-radius: 5px;
@@ -45,8 +43,9 @@ hr {
 .video-container {
   height: 150px;
   display: block;
-  width: 758px;
+  width: 100%;
   overflow: hidden;
+  margin: auto;
   margin-bottom: 20px;
 }
 .search-bar {
@@ -121,17 +120,22 @@ hr {
   font-size: 10px;
   font-family: "Noto Sans TC", sans-serif;
   text-align: right;
-  position: relative;
-  right: 13px;
+  margin-left: 20px;
 }
 #current-geo-location:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-#current-icon {
-  position: relative;
-  top: -15px;
-}
+
 #description {
   text-transform: capitalize;
+}
+
+@media (max-width: 576px) {
+  .forecast-temp {
+    margin-bottom: 20px;
+  }
+  .humidity-sm {
+    margin-bottom: 30px;
+  }
 }
